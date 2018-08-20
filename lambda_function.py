@@ -1,4 +1,4 @@
-#!/usr/bin/python
+from __future__ import print_function
 
 def lambda_handler(event, context):
-  return 'Hello World!'
+  return "Hello, " + event['name'] + "!"  # Echo back the first key value
