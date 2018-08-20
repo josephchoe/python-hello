@@ -1,4 +1,13 @@
-from __future__ import print_function
+import json
 
 def lambda_handler(event, context):
-  return "Hello, " + event['name'] + "!"  # Echo back the first key value
+  body = {
+    "message": "Hello, " + event['name'] + "!"
+  }
+
+  response = {
+    "statusCode": 200,
+    "body": json.dumps(body)
+  }
+
+  return response
