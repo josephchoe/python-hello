@@ -1,8 +1,9 @@
 import json
 
 def lambda_handler(event, context):
+  message = hello(event['name'])
   body = {
-    "message": "Hello, " + event['name'] + "!"
+    "message": message
   }
 
   response = {
@@ -11,3 +12,6 @@ def lambda_handler(event, context):
   }
 
   return response
+
+def hello(name):
+  return "Hello, %s!" % name
